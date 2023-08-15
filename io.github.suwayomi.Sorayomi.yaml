@@ -13,7 +13,6 @@ modules:
   - name: suwayomi
     buildsystem: simple
     build-commands:
-      # - mv ./* /app/
       - mkdir -p /app/bin
       - mkdir -p /app/sorayomi
       - tar xf archive.tar.gz
@@ -21,13 +20,13 @@ modules:
       - cp -r lib /app/sorayomi/
       - cp -r tachidesk_sorayomi /app/sorayomi
       - chmod +x /app/sorayomi/tachidesk_sorayomi
+      - desktop-file-edit --set-icon io.github.suwayomi.Sorayomi tachidesk-sorayomi.desktop
       - ln -s /app/sorayomi/tachidesk_sorayomi /app/bin/tachidesk-sorayomi
-      - install -Dm644 io.github.suwayomi.Sorayomi.desktop /app/share/applications/io.github.suwayomi.Sorayomi.desktop
       - install -Dm644 io.github.suwayomi.Sorayomi.metainfo.xml /app/share/appdata/io.github.suwayomi.Sorayomi.metainfo.xml
       - install -Dm644 io.github.suwayomi.Sorayomi.png /app/share/icons/hicolor/512x512/apps/io.github.suwayomi.Sorayomi.png
     sources:
       - type: file
-        url: https://github.com/Suwayomi/Tachidesk-Sorayomi/releases/download/0.5.8/tachidesk-sorayomi-0.5.7-linux-x64.tar.gz
+        url: https://github.com/Suwayomi/Tachidesk-Sorayomi/releases/download/0.5.8/tachidesk-sorayomi-0.5.8-linux-x64.tar.gz
         sha256: 53f6b8a90d58092d667abad78c2a386d5d26be68f1b1800ca2b61a619eba4881
         dest-filename: archive.tar.gz
         only-arches:
@@ -39,6 +38,8 @@ modules:
           url-query: .assets | .[] | select(.name=="tachidesk-sorayomi-" + $version + "-linux-x64.tar.gz") | .browser_download_url
       - type: file
         path: io.github.suwayomi.Sorayomi.desktop
+        # The icon provided in the release is 1024px, which is too big for 
+        # a desktop icon so we use a downscaled version instead
       - type: file
         path: io.github.suwayomi.Sorayomi.png
       - type: file
