@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<component type="desktop">
+  <!--Created with
+  jdAppStreamEdit 7.0-->
+  <id>io.github.suwayomi.Sorayomi</id>
+  <name>Tachidesk Sorayomi</name>
+  <summary>A free and open source manga reader</summary>
+  <developer_name></developer_name>
+  <metadata_license>GFDL-1.3</metadata_license>
+  <project_license>MPL-2.0</project_license>
+  <description>
+    <p>IMPORTENT: This flatpak is not currently maitaned by the Sorayomi team please report all
+      issues to https://github.com/flathub/io.github.suwayomi.Sorayomi/issues
+    </p>
+    <p>
+      A free and open source manga reader based on Flutter to read manga from a Tachidesk-Server
+      instance. Tachidesk-Sorayomi need to connect with an already hosted server.
+    </p>
+    <p>
+      Here is a list of current features for interaction with Tachidesk-Sorayomi:
+    </p>
+    <ul>
+      <li>Managing installed Extensions</li>
+      <li>Interaction with your library</li>
+      <li>Browsing installed sources</li>
+      <li>Viewing manga and chapters</li>
+      <li>Reading, downloading, and managing chapters</li>
+      <li>Viewing chapter updates</li>
+    </ul>
+    <p>Note: Keep in mind that Tachidesk-Sorayomi and Tachidesk-Server are alpha software, so it can
+      have issues. See Support and help if it happens.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/Suwayomi/Tachidesk-Sorayomi</url>
+  <url type="bugtracker">https://github.com/flathub/io.github.suwayomi.Sorayomi/issues</url>
+  <url type="translate">https://hosted.weblate.org/projects/suwayomi/tachidesk-sorayomi/</url>
+  <url type="vcs-browser">https://github.com/Suwayomi/Tachidesk-Sorayomi</url>
+  <url type="contribute">https://github.com/Suwayomi/Tachidesk-Sorayomi</url>
+  <categories>
+    <category>Network</category>
+  </categories>
+  <requires>
+    <display_length compare="ge">small</display_length>
+  </requires>
+  <recommends>
+    <display_length compare="ge">small</display_length>
+    <display_length compare="le">large</display_length>
+  </recommends>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+</component>
